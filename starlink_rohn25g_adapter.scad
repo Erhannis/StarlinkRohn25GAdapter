@@ -16,8 +16,9 @@ $FOREVER = 1000;
 DUMMY = false;
 $fn = DUMMY ? 10 : 60;
 
-SL_BIG_D = 38.22;
-SL_SMALL_D = 36;
+SLOP = 0.5;
+SL_BIG_D = 38.22+SLOP;
+SL_SMALL_D = 36+SLOP;
 SL_SMALL_H = 60.71;
 // Assuming 45* slope between small and big
 SL_H = 120;
@@ -33,7 +34,7 @@ PIPE_LIP_H = 10;
 SL_BOTTOM_RAIN_D = SL_SMALL_D-PIPE_LIP_T*2;
 
 // Real
-*difference() {
+difference() {
     union() {
         cylinder(d=PIPE_ID,h=SL_H+SL_OVERHANG_SLOP+SL_BOTTOM_T);
         cylinder(d=PIPE_ID+PIPE_LIP_T*2,h=PIPE_LIP_H);
@@ -47,7 +48,7 @@ SL_BOTTOM_RAIN_D = SL_SMALL_D-PIPE_LIP_T*2;
     }
     tz(SL_H-SL_SMALL_H+SL_BUTTON_D/2+SL_BUTTON_OZ) teardrop(d=SL_BUTTON_D,l=$FOREVER);
     cylinder(d=SL_BOTTOM_RAIN_D, h=$FOREVER);
-    OXp();
+    //OXp();
 }
 
 // Inner mock
@@ -79,7 +80,7 @@ SL_BOTTOM_RAIN_D = SL_SMALL_D-PIPE_LIP_T*2;
 }
 
 // Outer mock
-difference() {
+*difference() {
     union() {
         cylinder(d=PIPE_ID,h=SL_H+SL_OVERHANG_SLOP+SL_BOTTOM_T);
         cylinder(d=PIPE_ID+PIPE_LIP_T*2,h=PIPE_LIP_H);
@@ -94,5 +95,5 @@ difference() {
     }
     tz(SL_H-SL_SMALL_H+SL_BUTTON_D/2+SL_BUTTON_OZ) teardrop(d=SL_BUTTON_D,l=$FOREVER);
     cylinder(d=SL_BOTTOM_RAIN_D, h=$FOREVER);
-    OXp();
+    //OXp();
 }
