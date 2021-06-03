@@ -21,13 +21,13 @@ SL_BIG_D = 38.22+SLOP;
 SL_SMALL_D = 36+SLOP;
 SL_SMALL_H = 60.71;
 // Assuming 45* slope between small and big
-SL_H = 120;
+SL_H = 105;
 SL_BOTTOM_T = 5;
 SL_OVERHANG_SLOP = 1; // Extra room to account for sagging in the overhang
 SL_BUTTON_D = 14; // 12.5, with wiggle room
 SL_BUTTON_OZ = 5.4;
 
-PIPE_ID = 47.8; // 47-48; kinda compromising
+PIPE_ID = 47.6; // 47-48; kinda compromising
 PIPE_LIP_T = 2.5;
 PIPE_LIP_H = 10;
 
